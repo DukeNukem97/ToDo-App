@@ -1,0 +1,25 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.main-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: yellowgreen;
+}
+.todo-submit {
+  height: 100vh;
+  width: 500px;
+  background: blue;
+}
+.todo-list {
+  height: 100vh;
+
+  width: 500px;
+  background: red;
+  height: 100px;
+}
