@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todo-submit">
+      <div class="date-time">
+        <div class="time"></div>
+        <div class="date"></div>
+      </div>
+      <div class="todo">
+        <form>
+          <input
+            onkeydown="inputValid()"
+            type="text"
+            id="todo"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <br /><button id="add-btn">
+            <span>Add</span><i class="fas fa-archive fa-lg"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="left-blank"></div>
+      <div class="todo-list">
+        <div class="filters">
+          <select name="filters" id="filter">
+            <option id="all" value="all" selected>All</option>
+            <option value="completed">Completed</option>
+            <option value="Uncompleted">Uncompleted</option>
+          </select>
+          <span id="filter-down"><i class="fas fa-sort-down"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>
