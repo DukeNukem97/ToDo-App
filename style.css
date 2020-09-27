@@ -9,9 +9,17 @@ html {
 .main-container {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+}
+.left-blank {
+  float: left;
+  width: 45%;
+  height: 100%;
+}
+.todo-list {
   background: rgb(191, 218, 224);
+  float: right;
+  height: 100%;
+  width: 55%;
 }
 
 .todo-submit {
@@ -41,6 +49,7 @@ form {
   width: 98%;
   text-align: center;
 }
+
 .todo input {
   border: 1px solid grey;
   border-radius: 10px;
@@ -76,14 +85,16 @@ form {
   border: 1px solid white;
 }
 .filters {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  margin-bottom: 40px;
   width: 200px;
-  position: relative;
   height: 40px;
 }
 .filters select {
+  cursor: pointer;
   font-family: "Raleway", sans-serif;
   padding-left: 15px;
   border: none;
@@ -100,16 +111,39 @@ form {
   right: 10px;
 }
 
+.todos-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
 @media (max-width: 900px) and (min-width: 630px) and (max-height: 949px) {
   .todo {
     margin-top: -70px;
   }
+  .todo-submit {
+    width: 45%;
+    height: 100%;
+  }
+  .left-blank {
+    width: 45%;
+    height: 100%;
+  }
+  .todo-list {
+    width: 55%;
+    height: 100%;
+  }
 }
 @media (min-width: 500px) and (max-width: 900px) and (max-height: 899px) and (min-height: 651px) {
-  .left-blank,
-  .todo-list {
-    grid-column: 1/3;
+  .left-blank {
+    width: 100%;
+    height: 50%;
   }
+  .todo-list {
+    width: 100%;
+    height: 100%;
+  }
+
   .todo-submit {
     width: 100%;
     height: 50%;
@@ -122,7 +156,7 @@ form {
     font-size: 14px;
   }
   .filters {
-    margin-top: 150px;
+    margin-top: 50px;
   }
   .date-time {
     margin-top: 70px;
@@ -133,14 +167,19 @@ form {
 }
 
 @media (max-height: 1024px) and (min-height: 400px) and (max-width: 499px) and (min-width: 360px) {
-  .left-blank,
+  .left-blank {
+    width: 100%;
+    height: 50%;
+  }
   .todo-list {
-    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
   }
   .todo-submit {
     width: 100%;
     height: 50%;
   }
+
   .todo {
     margin-top: -70px;
   }
@@ -154,20 +193,25 @@ form {
     font-size: 14px;
   }
   .filters {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }
 @media (max-height: 1024px) and (min-height: 551px) and (max-width: 359px) {
-  .left-blank,
-  .todo-list {
-    grid-column: 1/3;
-  }
   .todo-submit {
     width: 100%;
     height: 50%;
   }
+
+  .left-blank {
+    width: 100%;
+    height: 50%;
+  }
+  .todo-list {
+    width: 100%;
+    height: 100%;
+  }
   .todo {
-    margin-top: -70px;
+    margin-top: -60px;
   }
   .date-time {
     margin-top: 40px;
@@ -179,17 +223,22 @@ form {
     font-size: 14px;
   }
   .filters {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }
 @media (max-height: 551px) and (max-width: 359px) {
-  .left-blank,
-  .todo-list {
-    grid-column: 1/3;
-  }
   .todo-submit {
     width: 100%;
     height: 70%;
+  }
+
+  .left-blank {
+    width: 100%;
+    height: 70%;
+  }
+  .todo-list {
+    width: 100%;
+    height: 100%;
   }
   .todo {
     margin-top: -120px;
@@ -203,12 +252,19 @@ form {
   .date {
     font-size: 14px;
   }
+  .filters {
+    margin-top: 50px;
+  }
 }
 
 @media (max-height: 650px) and (max-width: 720px) and (min-width: 650px) {
-  .left-blank,
+  .left-blank {
+    width: 100%;
+    height: 70%;
+  }
   .todo-list {
-    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
   }
   .todo-submit {
     width: 100%;
@@ -224,21 +280,25 @@ form {
     font-size: 14px;
   }
   .filters {
-    margin-top: 230px;
+    margin-top: 50px;
   }
 }
 
 @media (max-height: 650px) and (min-height: 380px) and (max-width: 649px) {
-  .left-blank,
-  .todo-list {
-    grid-column: 1/3;
-  }
   .todo-submit {
     width: 100%;
     height: 50%;
   }
   .todo {
     margin-top: -120px;
+  }
+  .left-blank {
+    width: 100%;
+    height: 50%;
+  }
+  .todo-list {
+    width: 100%;
+    height: 100%;
   }
   .date-time {
     margin-top: 0;
@@ -250,6 +310,36 @@ form {
     font-size: 10px;
   }
   .filters {
-    margin-top: 100px;
+    margin-top: 10px;
   }
 }
+
+/* @media (max-height: 900px) and (min-height: 521px) and (max-width: 729px) {
+  .todo-submit {
+    width: 100%;
+    height: 50%;
+  }
+  .todo {
+    margin-top: -120px;
+  }
+  .left-blank {
+    width: 100%;
+    height: 50%;
+  }
+  .todo-list {
+    width: 100%;
+    height: 100%;
+  }
+  .date-time {
+    margin-top: 0;
+  }
+  .time {
+    font-size: 18px;
+  }
+  .date {
+    font-size: 10px;
+  }
+  .filters {
+    margin-top: 10px;
+  }
+} */
